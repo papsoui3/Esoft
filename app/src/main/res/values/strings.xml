@@ -12,6 +12,10 @@
     <string name="menu_slideshow">About</string>
     <string name="update_app">Update App</string>
     <string name="install">Install</string>
-    <string name="textview">TextView</string>
+    <string name="textview"></string>
     <string name="install_apk">Install Apk</string>
+    <string name="recieve_data_from_iis">Receive Data from IIS</string>
+    <string name="get_data_from_an_api_xml_site_and_output_them">Get data from an API xml site and output them</string>
+    <string name="todo">TODO</string>
+    <string name="install_an_apk_file">Install An Apk file</string>
 </resources>
