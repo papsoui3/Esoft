@@ -5,4 +5,5 @@
         android:title="@string/update_app"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
 </menu>

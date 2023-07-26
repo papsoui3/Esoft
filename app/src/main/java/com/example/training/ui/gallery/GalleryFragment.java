@@ -23,6 +23,7 @@ private FragmentGalleryBinding binding;
     View root = binding.getRoot();
 
         final TextView textView = binding.apilist;
+
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
 

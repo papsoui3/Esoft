@@ -34,7 +34,7 @@ public class LoginFragment extends AppCompatActivity {
                 startActivity(home);
             }
             else{
-                Toast.makeText(LoginFragment.this,"Invalid Password",Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginFragment.this,"Invalid Password or Username",Toast.LENGTH_LONG).show();
             }
         });
     }
