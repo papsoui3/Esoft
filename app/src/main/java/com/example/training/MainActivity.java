@@ -22,7 +22,9 @@ import android.os.Environment;
 import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,6 +48,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+import androidx.databinding.DataBindingUtil;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -53,6 +56,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.training.databinding.ActivityMainBinding;
+import com.example.training.databinding.CustomTablerowLayoutBinding;
 import com.example.training.databinding.PdfviewBinding;
 import com.example.training.ui.fragmentcompany;
 import com.google.android.material.navigation.NavigationView;
@@ -79,6 +83,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -217,55 +222,42 @@ public class MainActivity extends AppCompatActivity {
         PdfviewBinding binding = PdfviewBinding.inflate(getLayoutInflater());
         binding.setPdfTitle("My PDF Title");
         // Set the variable directly in the binding object
+        TableLayout stk = binding.tableLayout;
+
+// Create a list of data for the new row
+        List<String> newRowDataList = Arrays.asList("43242Row 1", "hfdkjshlkjfdhlkjs2", "234");
+
+// Create a new TableRow for the new data
+
+// Loop through the data and create TextViews for each cell
+            TextView item = binding.item;
+        TextView qty = binding.qty;
+        TextView desc = binding.desc;
+
+
+            item.setText(newRowDataList.get(0));
+            desc.setText(newRowDataList.get(1));
+            qty.setText(newRowDataList.get(2));
+
+
+      //  stk.addView(newRow);
+
+
+        TextView textView12 = binding.telephone;
+        TextView Doc_num = binding.number;
+        // Replace 'yourTextViewId' with the actual ID of the TextView in your layout
+        textView12.setText("My PDF Title");
+        Doc_num.setText(": TSAL80001");
+
         View view = binding.getRoot();
         view.measure(View.MeasureSpec.makeMeasureSpec(page.getCanvas().getWidth(), View.MeasureSpec.EXACTLY),
                 View.MeasureSpec.makeMeasureSpec(page.getCanvas().getHeight(), View.MeasureSpec.EXACTLY));
         view.layout(0, 0, page.getCanvas().getWidth(), page.getCanvas().getHeight());
 
 // Verify if the TextView is successfully bound
-        TextView textView1 = binding.telephone;
-        TextView Doc_num = binding.number;
-
-        TableLayout stk = binding.tableLayout;
-        //Below is the Table data with 4 columns
-        for (int i = 0; i < 5; i++) {
-            TableRow tbrow = new TableRow(MainActivity.this); //Table row for data
-
-            TextView t1v = new TextView(MainActivity.this);
-            t1v.setText(" " + (i+1));
-            t1v.setTextColor(Color.BLACK);
-            t1v.setGravity(Gravity.CENTER);
-            tbrow.addView(t1v);
-
-            TextView t2v = new TextView(MainActivity.this);
-            t2v.setText(" John ");
-            t2v.setTextColor(Color.BLACK);
-            t2v.setGravity(Gravity.CENTER);
-            tbrow.addView(t2v);
-
-            TextView t3v = new TextView(MainActivity.this);
-            t3v.setText(" 12345 ");
-            t3v.setTextColor(Color.BLACK);
-            t3v.setGravity(Gravity.CENTER);
-            tbrow.addView(t3v);
-
-            TextView t4v = new TextView(MainActivity.this);
-            t4v.setText(" 100 ST NY ");
-            t4v.setTextColor(Color.BLACK);
-            t4v.setGravity(Gravity.CENTER);
-            tbrow.addView(t4v);
-            stk.addView(tbrow);
-        }
 
 
-
-        // Replace 'yourTextViewId' with the actual ID of the TextView in your layout
-        if (textView1 != null) {
-            textView1.setText("My PDF Title");
-            Doc_num.setText(": TSAL80001");
-        } else {
-            Log.e("PDFGeneration", "TextView not found or not bound properly.");
-        }
+        // ... (Previous co
 
         view.draw(page.getCanvas());
 

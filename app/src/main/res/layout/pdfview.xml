@@ -44,7 +44,10 @@
                 android:layout_height="35dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="vertical"
-                android:background="@color/teal_700">
+                android:background="#CACACA"
+                android:radius="10dp"
+                >
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -72,6 +75,7 @@
                             android:orientation="horizontal">
 
                     <TextView
+
                         android:layout_width="56dp"
                         android:layout_height="8dp"
                         android:text="Doc.No/Αρ. Εγγραφου"
@@ -112,38 +116,45 @@
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="114dp"
+            android:layout_marginTop="8dp">
 
             <!-- Header row -->
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="Item/Προιον"
+                    android:background="@drawable/border_table_row"
+                    android:text="Item/Προιον  "
                     android:textSize="6sp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2.5"
-                    android:text="Description/Περιγραφη"
+                    android:background="@drawable/border_table_row"
+                    android:text="Description/Περιγραφη    "
                     android:textSize="6sp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Column 3"
+                    android:background="@drawable/border_table_row"
+                    android:gravity="center"
+                    android:text="Qty"
                     android:textSize="6sp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/border_table_row"
                     android:text="Column 4"
                     android:textSize="6sp" />
 
@@ -151,17 +162,45 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/border_table_row"
                     android:text="Column 5"
                     android:textSize="6sp" />
             </TableRow>
+            <TableRow
+                android:id="@+id/table_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
+                <TextView
+                    android:id="@+id/item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="6sp" />
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+
+                    android:textSize="6sp" />
+                <TextView
+                    android:id="@+id/qty"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="6sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="6sp" />
 
 
-
-
-            <!-- Add rows and data dynamically -->
-
+            </TableRow>
         </TableLayout>
-
 
 
 
